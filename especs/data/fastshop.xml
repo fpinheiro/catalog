@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+	<title>FastShop Catalog</title>
+	<category>
+		<name>Monitor</name>
+		<item>
+			<name>LG 23' LED</name>
+			<photo>lg23led.jpg</photo>
+			<description>Description...</description>
+		</item>
+	</category>
+	<category>
+		<name>Computador</name>
+		<item>
+			<name>Samsung Ultrabook</name>
+			<photo>ultrabook.jpg</photo>
+		</item>
+		<item>
+			<name>Mac Book Pro 15'</name>
+			<photo>macbookpro15.jpg</photo>
+		</item>
+	</category>
+	<category>
+		<name>Smartphone</name>
+		<category>
+			<name>Samsung</name>
+			<item>
+				<name>Samsung Galaxy SIII</name>
+				<photo>galaxys3.jpg</photo>
+				<description>Smartphone Samsung Galaxy S III I9300 Azul com Display de Super AMOLED de 4,8", 3G + Wi-Fi, Android 4.0, Processador Quad Core 1.4Ghz, Câmera de 8.0MP, Vídeos em Full HD e Memória de 16GB</description>
+			</item>
+		</category>
+		<category>
+			<name>LG</name>
+			<item>
+				<name>LG Optimus L5</name>
+				<photo>lgl5.jpg</photo>
+			</item>
+		</category>
+	</category>
+</catalog>

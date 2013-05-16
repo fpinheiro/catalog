@@ -1,0 +1,90 @@
+﻿<?Infragistics.Models format="xaml" version="17"?>
+<Page xmlns="http://prototypes.infragistics.com/"
+                                                          Id="8679247e-24d8-4ac2-a723-a23449dba8d6">
+    <Page.Content>
+        <Content Width="800" Height="600" Background="White" Id="9c61bd9c-34fc-4ed3-b047-dd2a400e2640">
+            <Content.Layers>
+                <Layer Layout="Stretch" Id="73b011ae-d254-44b2-9bf0-b276d6469003" Panel.Layout="Stretch" />
+            </Content.Layers>
+        </Content>
+    </Page.Content>
+    <Page.Scenes>
+        <Scene Title="Start" Created="05/02/2013 16:39:46" Id="cc3923b6-7707-4092-9b22-29521d103fc9">
+            <Scene.KeyFrames>
+                <KeyFrame Id="1d201d0c-70e2-4d7e-bc44-58f159ac1274">
+                    <KeyFrame.Operations>
+                        <Add Property="Panel.Children" Target="73b011ae-d254-44b2-9bf0-b276d6469003">
+                            <Add.Item>
+                                <Image SourcePath="assets/background.png" Id="e81e6171-c3b5-4fbc-9688-1ca7cf218739" Name="Iphone background" ControlExtensions.Locked="True" Panel.Bounds="0,0,800*,600*" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="73b011ae-d254-44b2-9bf0-b276d6469003">
+                            <Add.Item>
+                                <ContainerBox Color="#FF555555" Background="White" Id="926f1178-9067-4c34-abea-082c05092e17" Panel.Bounds="268,118,246{5,2147483647},42{5,2147483647}">
+                                    <ContainerBox.Content>
+                                        <Container Layout="Stretch" ClipToContainer="True" Id="e4c314a5-8110-4a3a-908f-19aa701683ac" Panel.Bounds="0,0,244*,47*">
+                                            <Container.Children>
+                                                <Icon Path="F1M7,21L24,21C24.5522003173828,21 25,21.4472999572754 25,22 25,22.5527000427246 24.5522003173828,23 24,23L7,23C6.44779968261719,23 6,22.5527000427246 6,22 6,21.4472999572754 6.44779968261719,21 7,21z M1.00000023841858,20L3,20C3.55080032348633,20,4,20.4491996765137,4,21L4,23C4,23.5508003234863,3.55080032348633,24,3,24L1.00000023841858,24C0.449199676513672,24,0,23.5508003234863,2.38418579101563E-07,23L2.38418579101563E-07,21C0,20.4491996765137,0.449199676513672,20,1.00000023841858,20z M7,15L24,15C24.5522003173828,15 25,15.4472999572754 25,16 25,16.5527000427246 24.5522003173828,17 24,17L7,17C6.44779968261719,17 6,16.5527000427246 6,16 6,15.4472999572754 6.44779968261719,15 7,15z M1.00000023841858,14L3,14C3.55080032348633,14,4,14.4491996765137,4,15L4,17C4,17.5508003234863,3.55080032348633,18,3,18L1.00000023841858,18C0.449199676513672,18,0,17.5508003234863,2.38418579101563E-07,17L2.38418579101563E-07,15C0,14.4491996765137,0.449199676513672,14,1.00000023841858,14z M7,9L24,9C24.5522003173828,9 25,9.44729995727539 25,10 25,10.5527000427246 24.5522003173828,11 24,11L7,11C6.44779968261719,11 6,10.5527000427246 6,10 6,9.44729995727539 6.44779968261719,9 7,9z M1.00000023841858,8L3,8C3.55080032348633,8,4,8.44919967651367,4,9L4,11C4,11.5508003234863,3.55080032348633,12,3,12L1.00000023841858,12C0.449199676513672,12,0,11.5508003234863,2.38418579101563E-07,11L2.38418579101563E-07,9C0,8.44919967651367,0.449199676513672,8,1.00000023841858,8z M7,3.00000047683716L24,3.00000047683716C24.5522003173828,3 25,3.44729995727539 25,4.00000047683716 25,4.55270004272461 24.5522003173828,5 24,5L7,5C6.44779968261719,5 6,4.55270004272461 6,4.00000047683716 6,3.44729995727539 6.44779968261719,3 7,3.00000047683716z M1.00000023841858,2.00000047683716L3,2.00000047683716C3.55080032348633,2,4,2.44919967651367,4,3.00000047683716L4,5C4,5.55080032348633,3.55080032348633,6,3,6L1.00000023841858,6C0.449199676513672,6,0,5.55080032348633,2.38418579101563E-07,5L2.38418579101563E-07,3.00000047683716C0,2.44919967651367,0.449199676513672,2,1.00000023841858,2.00000047683716z" Color="#FF555555" CatalogId="Bullets" Id="3c4abba5-b9eb-4b9e-acf5-87108d498263" Panel.Bounds="207,4,32{5,2147483647},32{5,2147483647}">
+                                                    <Icon.Click>
+                                                        <CommandNavigate Screen="/Visualizar Estrutura Catálogo.screen" State="98bb506c-56ba-433c-a380-aeedf85da0d1" Created="05/02/2013 17:45:26" />
+                                                    </Icon.Click>
+                                                </Icon>
+                                                <Image SourcePath="assets/fastshop_small.png" Id="271717f6-c742-4ca3-8f34-f5da1b37e80a" Name="fast logo" Panel.Bounds="9,4,32,32" />
+                                                <Label Text="Fast Shop" Foreground="#FF282828" FontSize="18" FontStyle="Normal|Bold" Id="6e511b16-b115-4bfa-9f6c-abc80e2889bd" Panel.Bounds="49,8,5*{5,2147483647},5*{5,2147483647}" />
+                                            </Container.Children>
+                                        </Container>
+                                    </ContainerBox.Content>
+                                </ContainerBox>
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Before="926f1178-9067-4c34-abea-082c05092e17" Target="73b011ae-d254-44b2-9bf0-b276d6469003">
+                            <Add.Item>
+                                <ContainerBox Color="Transparent" Background="#FFE2E2E2" Thickness="0" Id="3c13a7c1-aee7-4b2a-b78b-2599fff11229" Panel.Bounds="268,118,246{5,2147483647},370{5,2147483647}">
+                                    <ContainerBox.Content>
+                                        <Container Layout="Stretch" ClipToContainer="True" Id="9ed7bd6e-d984-45db-ad2e-53bf91adaef2" Panel.Bounds="0,0,246*,370*">
+                                            <Container.Children>
+                                                <Image SourcePath="assets/galaxys3.jpg" Id="52439aae-fd1e-4cf8-af93-ba5766ecf0f4" Panel.Bounds="8,61,230{5,2147483647},221{5,2147483647}">
+                                                    <Image.Click>
+                                                        <CommandNavigate Screen="/Visualizar Produto.screen" State="2dbff94e-9ec5-462a-a9c1-21be6c19dc3a" Created="05/02/2013 17:34:41" />
+                                                    </Image.Click>
+                                                </Image>
+                                                <Label Text="Samgung Galaxy SIII" Foreground="#FF282828" FontSize="13" FontStyle="Normal" Id="3fdbc13f-1f00-4bf0-b148-2393b3094625" Panel.Bounds="62,298,0*{5,2147483647},0*{5,2147483647}" />
+                                                <Icon Path="F1M0.357199907302856,0.0258998163044453C0.619525015354156,-0.0939500033855438,1.06885004043579,0.199400007724762,1.81760001182556,0.961699783802032L9.95409965515137,9.25139999389648C12.6794004440308,12.0284004211426,12.6859998703003,11.9946002960205,9.94919967651367,14.7819995880127L1.79790008068085,23.0872993469238C0.297600001096725,24.6135005950928,-0.00150000001303852,24.0972003936768,1.54242940197946E-07,22.4883003234863L0.0187999531626701,1.56930005550385C0.0195499993860722,0.678800046443939,0.0948750004172325,0.145750015974045,0.357199907302856,0.0258998163044453z" CatalogId="Right Fill Triangle" Id="3a4972b7-405b-449d-acb2-292aa9286462" Panel.Bounds="208,291,32{5,2147483647},32{5,2147483647}">
+                                                    <Icon.Click>
+                                                        <CommandNext SceneId="866dcdde-97df-4ca4-a8d8-d4b079300cc7" Created="05/02/2013 21:09:55" />
+                                                    </Icon.Click>
+                                                </Icon>
+                                                <Icon Path="F1M11.6428003311157,0.0258998163044453C11.9051246643066,0.145750015974045,11.9804496765137,0.678800046443939,11.9812002182007,1.56930005550385L12,22.4883003234863C12.0015001296997,24.0972003936768,11.7024002075195,24.6135005950928,10.2020998001099,23.0872993469238L2.05080008506775,14.7819995880127C-0.685999989509583,11.9946002960205,-0.679400026798248,12.0284004211426,2.04589986801147,9.25139999389648L10.1823997497559,0.961699783802032C10.9311504364014,0.199400007724762,11.3804750442505,-0.0939500033855438,11.6428003311157,0.0258998163044453z" CatalogId="Left Fill Triangle" Id="28d1b108-2de0-457a-86d1-8d71d17df977" Panel.Bounds="8,291,32{5,2147483647},32{5,2147483647}" />
+                                            </Container.Children>
+                                        </Container>
+                                    </ContainerBox.Content>
+                                </ContainerBox>
+                            </Add.Item>
+                        </Add>
+                    </KeyFrame.Operations>
+                </KeyFrame>
+            </Scene.KeyFrames>
+        </Scene>
+        <Scene Title="Tapped/Clicked Right Fill Triangle" StateGroup="cc3923b6-7707-4092-9b22-29521d103fc9" ParentScene="cc3923b6-7707-4092-9b22-29521d103fc9" Created="05/02/2013 21:09:55" Id="866dcdde-97df-4ca4-a8d8-d4b079300cc7">
+            <Scene.KeyFrames>
+                <KeyFrame Id="3d14f0d4-ca97-474d-9b44-b9818ad8c034">
+                    <KeyFrame.Operations>
+                        <Add Property="Panel.Children" Target="9ed7bd6e-d984-45db-ad2e-53bf91adaef2">
+                            <Add.Item>
+                                <Image SourcePath="assets/lgl5.jpg" Id="30564a63-9a3b-4190-aa6d-16e9b6b40337" Panel.Bounds="8,63,232{5,2147483647},220{5,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Control.Click" Target="28d1b108-2de0-457a-86d1-8d71d17df977">
+                            <Add.Item>
+                                <CommandSwitchTo SceneId="cc3923b6-7707-4092-9b22-29521d103fc9" Created="05/02/2013 21:12:51" />
+                            </Add.Item>
+                        </Add>
+                        <Set Property="Label.Text" Value="LG Optimus L5" Target="3fdbc13f-1f00-4bf0-b148-2393b3094625" />
+                        <Move To="79,298" Target="3fdbc13f-1f00-4bf0-b148-2393b3094625" />
+                        <Remove Target="52439aae-fd1e-4cf8-af93-ba5766ecf0f4" />
+                    </KeyFrame.Operations>
+                </KeyFrame>
+            </Scene.KeyFrames>
+        </Scene>
+    </Page.Scenes>
+</Page>

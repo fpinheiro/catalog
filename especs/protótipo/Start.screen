@@ -1,0 +1,74 @@
+﻿<?Infragistics.Models format="xaml" version="17"?>
+<Page xmlns="http://prototypes.infragistics.com/"
+                                                          Id="796d81fa-b1cd-45f0-af98-cbe8aaf7b5e4">
+    <Page.Content>
+        <Content Width="800" Height="600" Background="White" Id="7f50d646-afb1-4176-aeba-51d8e6883b5a">
+            <Content.Layers>
+                <Layer Layout="Stretch" Id="63d68a9c-7a17-4208-aa80-64675af864e4" Panel.Layout="Stretch" />
+            </Content.Layers>
+        </Content>
+    </Page.Content>
+    <Page.Scenes>
+        <Scene Title="Start" Created="05/02/2013 14:14:26" Id="dcb77b73-509b-4956-b69b-72881d09a951">
+            <Scene.KeyFrames>
+                <KeyFrame Id="ade867e3-f202-4fe8-a477-9de37c9a33de">
+                    <KeyFrame.Operations>
+                        <Add Property="Panel.Children" Target="63d68a9c-7a17-4208-aa80-64675af864e4">
+                            <Add.Item>
+                                <Image SourcePath="assets/background.png" Id="2953f799-6c26-43e5-91c5-83c14c41ade6" Name="Iphone background" ControlExtensions.Locked="True" Panel.Bounds="0,0,800*,600*" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="63d68a9c-7a17-4208-aa80-64675af864e4">
+                            <Add.Item>
+                                <Image SourcePath="assets/ScreenHunter_02 May. 02 11.16.jpg" Id="f71ff8ab-a06f-465f-b7df-fc54acb36826" Panel.Bounds="266,118,248{5,2147483647},370{5,2147483647}" />
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="63d68a9c-7a17-4208-aa80-64675af864e4">
+                            <Add.Item>
+                                <Image SourcePath="assets/fastshop_small.png" Id="93d576de-54d0-40d0-a4c5-319cc7fbc447" Panel.Bounds="462,383,41{5,2147483647},41{5,2147483647}">
+                                    <Image.Click>
+                                        <CommandNext SceneId="d6d20b2a-5114-4810-90ab-fa4101d63857" Created="05/02/2013 14:46:37" />
+                                    </Image.Click>
+                                </Image>
+                            </Add.Item>
+                        </Add>
+                    </KeyFrame.Operations>
+                </KeyFrame>
+            </Scene.KeyFrames>
+        </Scene>
+        <Scene Title="Tapped/Clicked fastshop_small" StateGroup="dcb77b73-509b-4956-b69b-72881d09a951" ParentScene="dcb77b73-509b-4956-b69b-72881d09a951" Created="05/02/2013 14:46:37" Id="d6d20b2a-5114-4810-90ab-fa4101d63857">
+            <Scene.KeyFrames>
+                <KeyFrame Duration="1000" Id="5163a635-ca63-46fb-bcdc-9df1fbe4ef7a">
+                    <KeyFrame.Operations>
+                        <Add Property="Content.SceneApplied" Target="7f50d646-afb1-4176-aeba-51d8e6883b5a">
+                            <Add.Item>
+                                <ConditionalCommand>
+                                    <ConditionalCommand.Command>
+                                        <CommandNavigate Screen="/Home.screen" State="cc3923b6-7707-4092-9b22-29521d103fc9" Created="05/02/2013 14:51:51" />
+                                    </ConditionalCommand.Command>
+                                    <ConditionalCommand.Condition>
+                                        <SceneCondition Scene="d6d20b2a-5114-4810-90ab-fa4101d63857" />
+                                    </ConditionalCommand.Condition>
+                                </ConditionalCommand>
+                            </Add.Item>
+                        </Add>
+                        <Add Property="Panel.Children" Target="63d68a9c-7a17-4208-aa80-64675af864e4" Duration="1000">
+                            <Add.Item>
+                                <ContainerBox Background="White" Id="aa9d91b0-9789-42a6-8dd9-294873ef6ff2" Panel.Bounds="266,118,248{5,2147483647},370{5,2147483647}">
+                                    <ContainerBox.Content>
+                                        <Container Layout="Stretch" ClipToContainer="True" Id="f59d66a1-639d-48e3-ab16-e37933a655e4">
+                                            <Container.Children>
+                                                <Image SourcePath="assets/FastShop.jpg" Id="b88144b8-c8f5-49b0-88e6-42bd86034834" Panel.Bounds="-7,109,260{5,2147483647},178{5,2147483647}" />
+                                            </Container.Children>
+                                        </Container>
+                                    </ContainerBox.Content>
+                                </ContainerBox>
+                            </Add.Item>
+                        </Add>
+                    </KeyFrame.Operations>
+                </KeyFrame>
+                <KeyFrame Duration="500" Id="f494f871-9df4-47be-904d-b133c8630dc3" />
+            </Scene.KeyFrames>
+        </Scene>
+    </Page.Scenes>
+</Page>
