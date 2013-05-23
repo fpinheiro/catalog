@@ -1,9 +1,8 @@
 package my.catalog;
 
-import my.catalog.unzip.Unzip;
+import resource.ResourceReader;
 import android.app.Activity;
 import android.os.Bundle;
-import android.os.Environment;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -20,11 +19,10 @@ public class MainActivity extends Activity {
 		shareButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				String zipFile = Environment.getExternalStorageDirectory() + "/data.zip"; 
-				String unzipLocation = Environment.getExternalStorageDirectory() + "/unzipped/"; 
-				 
-				Unzip d = new Unzip(zipFile, unzipLocation); 
-				d.unzip(); 
+//				String root = Environment.getExternalStorageState();
+				String root = "mnt/sdcard/";
+				ResourceReader rr = new ResourceReader(root);
+				rr.read();
 			}
 		});
 	}

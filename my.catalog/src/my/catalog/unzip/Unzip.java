@@ -1,14 +1,18 @@
 package my.catalog.unzip;
 
-import android.util.Log;
-import android.widget.Toast;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
+import android.util.Log;
+
+/**
+ * Decompress _zipFile file at _location.
+ * 
+ * @author fpinheiro
+ */
 public class Unzip {
 	private String _zipFile;
 	private String _location;
@@ -20,7 +24,7 @@ public class Unzip {
 		_dirChecker("");
 	}
 
-	public void unzip() {
+	public Boolean unzip() {
 		try {
 			FileInputStream fin = new FileInputStream(_zipFile);
 			ZipInputStream zin = new ZipInputStream(fin);
@@ -42,8 +46,10 @@ public class Unzip {
 
 			}
 			zin.close();
+			return true;
 		} catch (Exception e) {
 			Log.e("Catalog", "Unzip error", e);
+			return false;
 		}
 
 	}
