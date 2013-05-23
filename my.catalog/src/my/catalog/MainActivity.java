@@ -10,6 +10,8 @@ import android.widget.Button;
 
 public class MainActivity extends Activity {
 
+	ResourceReader rr;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -21,7 +23,7 @@ public class MainActivity extends Activity {
 			public void onClick(View arg0) {
 //				String root = Environment.getExternalStorageState();
 				String root = "mnt/sdcard/";
-				ResourceReader rr = new ResourceReader(root);
+				rr = new ResourceReader(root);
 				rr.read();
 			}
 		});

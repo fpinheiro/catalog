@@ -25,8 +25,8 @@ public class ResourceReader {
 
 	public ResourceReader(String root) {
 		this.root = root;
-		_zipFile = root + "/data.zip";
-		_unzipLocation = root + "/unzipped/";
+		_zipFile = root + "data.zip";
+		_unzipLocation = root + "unzipped/";
 	}
 
 	/**
@@ -58,8 +58,9 @@ public class ResourceReader {
 	private Boolean _findResources() {
 		// If unzipLocation is there.
 		if ((new File(_unzipLocation)).isDirectory()) {
-			if (!(new File(_unzipLocation + "/structure.xml")).isFile()) {
-				return false;
+			if ((new File(_unzipLocation + "/structure.xml")).isFile()) {
+				Log.i("Catalog", "The resource was already unzipped");
+				return true;
 			}
 		}
 
@@ -104,5 +105,15 @@ public class ResourceReader {
 		}
 		Log.i("Catalog", "Catalog xml file read with success.");
 		return retXml;
+	}
+	
+	/**
+	 * Generates the Catalog object.
+	 * 
+	 * @author fpinheiro
+	 */
+	public Catalog generateCatalog(){
+		
+		return new Catalog();
 	}
 }
