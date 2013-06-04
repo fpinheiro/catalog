@@ -6,7 +6,6 @@ import java.io.StringReader;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-import android.util.Log;
 import android.util.Xml;
 
 public class XmlParser {
@@ -37,8 +36,6 @@ public class XmlParser {
 				continue;
 			}
 			String name = parser.getName();
-
-			Log.i("Catalog", "Tag name: " + name);
 
 			if (name.equals("title")) {
 				catalog.set_title(readTitle(parser));

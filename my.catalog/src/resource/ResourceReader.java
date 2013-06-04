@@ -4,12 +4,15 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.StringReader;
 
+import my.catalog.R;
 import my.catalog.unzip.Unzip;
 
 import org.xmlpull.v1.XmlPullParserException;
 
+import android.content.Context;
 import android.util.Log;
 
 /**
@@ -21,16 +24,14 @@ import android.util.Log;
  */
 public class ResourceReader {
 
-	public String root;
-	private String _zipFile;
 	private String _unzipLocation;
+	private Context _context;
 
 	public String xml;
 
-	public ResourceReader(String root) {
-		this.root = root;
-		_zipFile = root + "data.zip";
-		_unzipLocation = root + "unzipped/";
+	public ResourceReader(Context context) {
+		_context = context;
+		_unzipLocation = _context.getFilesDir().getAbsolutePath() + "/";
 	}
 
 
@@ -71,7 +72,6 @@ public class ResourceReader {
 		if (xml == null) {
 			return false;
 		}
-//		Log.i("Catalog", xml);
 		return true;
 	}
 
@@ -89,8 +89,9 @@ public class ResourceReader {
 				return true;
 			}
 		}
-
-		Unzip d = new Unzip(_zipFile, _unzipLocation);
+		
+		InputStream is = _context.getResources().openRawResource(R.raw.data);
+		Unzip d = new Unzip(is, _unzipLocation);
 
 		if (d.unzip()) {
 			return true;

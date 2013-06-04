@@ -1,8 +1,8 @@
 package my.catalog.unzip;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -14,11 +14,11 @@ import android.util.Log;
  * @author fpinheiro
  */
 public class Unzip {
-	private String _zipFile;
 	private String _location;
+	private InputStream _fin;
 
-	public Unzip(String zipFile, String location) {
-		_zipFile = zipFile;
+	public Unzip(InputStream fin, String location) {
+		_fin = fin;
 		_location = location;
 
 		_dirChecker("");
@@ -26,8 +26,7 @@ public class Unzip {
 
 	public Boolean unzip() {
 		try {
-			FileInputStream fin = new FileInputStream(_zipFile);
-			ZipInputStream zin = new ZipInputStream(fin);
+			ZipInputStream zin = new ZipInputStream(_fin);
 			ZipEntry ze = null;
 			while ((ze = zin.getNextEntry()) != null) {
 				Log.v("Catalog", "Unzipping " + ze.getName());
