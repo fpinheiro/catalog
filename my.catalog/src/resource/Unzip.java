@@ -1,4 +1,4 @@
-package my.catalog.unzip;
+package resource;
 
 import java.io.File;
 import java.io.FileOutputStream;

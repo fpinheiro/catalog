@@ -8,7 +8,6 @@ import java.io.InputStream;
 import java.io.StringReader;
 
 import my.catalog.R;
-import my.catalog.unzip.Unzip;
 
 import org.xmlpull.v1.XmlPullParserException;
 
