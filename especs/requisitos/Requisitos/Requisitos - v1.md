@@ -1,5 +1,12 @@
 # Catalog Viewer
 
+
+Class: **EEL 970 - Software para Smartphone**
+
+Professor: **Sergio Barbosa Villas-Boas**
+
+Aluno: **Fernando Pinheiro**
+
 ---
 
 
