@@ -4,8 +4,12 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.StringReader;
 
 import my.catalog.unzip.Unzip;
+
+import org.xmlpull.v1.XmlPullParserException;
+
 import android.util.Log;
 
 /**
@@ -29,6 +33,28 @@ public class ResourceReader {
 		_unzipLocation = root + "unzipped/";
 	}
 
+
+	/**
+	 * Parses the xml and generates the Catalog object.
+	 * 
+	 * @author fpinheiro
+	 */
+	public Catalog generateCatalog(){
+		
+		XmlParser xmlParser = new XmlParser();
+		Catalog catalog = null;
+		try {
+			catalog = xmlParser.parse(new StringReader(xml));
+		} catch (XmlPullParserException e) {
+			Log.e("Catalog", "Could not parse xml.[1]");
+			Log.e("Catalog", e.getMessage());
+		} catch (IOException e) {
+			Log.e("Catalog", "Could not parse xml.[2]");
+			Log.e("Catalog", e.getMessage());
+		}
+		return catalog;
+	}
+	
 	/**
 	 * Reads the resources, load xml file.
 	 * 
@@ -45,7 +71,7 @@ public class ResourceReader {
 		if (xml == null) {
 			return false;
 		}
-		Log.i("Catalog", xml);
+//		Log.i("Catalog", xml);
 		return true;
 	}
 
@@ -84,7 +110,6 @@ public class ResourceReader {
 		// Read xml file
 		try {
 			FileInputStream fis = new FileInputStream(_unzipLocation + "structure.xml");
-
 			ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
 			byte buf[] = new byte[1024];
@@ -105,15 +130,5 @@ public class ResourceReader {
 		}
 		Log.i("Catalog", "Catalog xml file read with success.");
 		return retXml;
-	}
-	
-	/**
-	 * Generates the Catalog object.
-	 * 
-	 * @author fpinheiro
-	 */
-	public Catalog generateCatalog(){
-		
-		return new Catalog();
 	}
 }

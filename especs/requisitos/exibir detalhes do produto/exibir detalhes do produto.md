@@ -9,4 +9,4 @@ Este caso de uso permite a exibição dos detalhes de um produto cadastrado no c
 1. No caso de uso exibir catálogo, o usuário indica que deseja visualizar os detalhes do produto. Ou, no caso de uso exibir mapa do catálogo, o usuário indica que deseja visualizar os detalhes do produto.
 2. É exibida uma tela com todos os detalhes do produto, como ilustra o protótipo abaixo.
 
-![](/details.png)
+![](details.png)

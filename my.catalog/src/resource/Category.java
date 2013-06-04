@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class Category {
 
 	private String _name;
-	private ArrayList<Category> _categories;
-	private ArrayList<Item> _items;
+	private ArrayList<Category> _categories = new ArrayList<Category>();
+	private ArrayList<Item> _items = new ArrayList<Item>();
 
 	public Category() {
 	}

@@ -6,7 +6,7 @@ Este caso de uso permite a exibição do catálogo gerado pelo caso de uso Cadas
 
 A exibição do catálogo será feita de item a item, na tela inicial do aplicativo, como na figura a seguir.
 
-![](/home.png)
+![](home.png)
 
 ## Fluxo Principal
 

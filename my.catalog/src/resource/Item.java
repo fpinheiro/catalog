@@ -12,6 +12,15 @@ public class Item {
 	private String _photo;
 	private String _description;
 
+	public Item() {
+	}
+	
+	public Item(String name, String photo, String description) {
+		_name = name;
+		_photo = photo;
+		_description = description;
+	}
+	
 	public String get_name() {
 		return _name;
 	}

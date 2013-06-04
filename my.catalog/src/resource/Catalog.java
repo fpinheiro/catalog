@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Catalog {
 
 	private String _title;
-	private ArrayList<Category> _categories;
+	private ArrayList<Category> _categories = new ArrayList<Category>();
 
 	public Catalog() {
 	}

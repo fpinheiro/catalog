@@ -9,4 +9,4 @@ Este caso de uso permite a visualização do mapa do catálogo em estrutura de �
 1. No caso de uso de exibir catálogo, o usuário indica que deseja visualizar o mapa do catálogo.
 2. É exibida tela com mapa do catálogo em árvore, como ilustra o protótipo abaixo.
 
-![](/map.png)
+![](map.png)
