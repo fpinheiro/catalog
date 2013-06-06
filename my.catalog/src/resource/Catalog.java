@@ -9,7 +9,16 @@ public class Catalog {
 
 	public Catalog() {
 	}
-	
+
+	public ArrayList<Item> getAllItems() {
+		ArrayList<Item> items = new ArrayList<Item>();
+
+		for (Category cat : _categories) {
+			items.addAll(cat.getAllItems());
+		}
+		return items;
+	}
+
 	public String get_title() {
 		return _title;
 	}

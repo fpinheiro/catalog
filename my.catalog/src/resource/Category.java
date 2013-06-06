@@ -1,6 +1,7 @@
 package resource;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class Category {
 
@@ -9,6 +10,20 @@ public class Category {
 	private ArrayList<Item> _items = new ArrayList<Item>();
 
 	public Category() {
+	}
+
+	public Collection<? extends Item> getAllItems() {
+		ArrayList<Item> items = new ArrayList<Item>();
+		items.addAll(_items);
+		for (Category cat : _categories) {
+			items.addAll(cat.getAllItems());
+		}
+		return items;
+	}
+	
+	@Override
+	public String toString(){
+		return get_name();
 	}
 	
 	public String get_name() {

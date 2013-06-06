@@ -21,6 +21,11 @@ public class Item {
 		_description = description;
 	}
 	
+	@Override
+	public String toString(){
+		return get_name();
+	}
+	
 	public String get_name() {
 		return _name;
 	}
