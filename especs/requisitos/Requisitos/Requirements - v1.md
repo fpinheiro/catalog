@@ -5,7 +5,13 @@ Class: **EEL 970 - Software para Smartphone**
 
 Professor: **Sergio Barbosa Villas-Boas**
 
-Aluno: **Fernando Pinheiro**
+> sbvb@sbvb.com.br	|	(+55-21) 7699-1337
+
+Student: **Fernando Pinheiro**
+	
+> fernandovpinheiro@gmail.com	|	(+55-21) 8820-5888
+
+Date: **6 June 2013**
 
 ---
 
@@ -41,6 +47,9 @@ This project assumes that the establishment in question will maintain its produc
 ### Extras Requirements
 
 + Usability: the application interface should be focused in fast performance and pleasant user interaction design.
+
+### Prototype Link
+[http://indigo.infragistics.com/prototype/29NY2YHK](http://indigo.infragistics.com/prototype/29NY2YHK "http://indigo.infragistics.com/prototype/29NY2YHK")
 
 ---
 
