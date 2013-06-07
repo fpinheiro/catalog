@@ -17,8 +17,8 @@ public class Category implements Parcelable {
 
 	private Category(Parcel in) {
 		_name = in.readString();
-		 in.readList(_categories, null);
-		 in.readList(_items, null);
+		 in.readTypedList(_categories, Category.CREATOR);
+		 in.readTypedList(_items, Item.CREATOR);
 	}
 
 	public Collection<? extends Item> getAllItems() {
@@ -38,8 +38,8 @@ public class Category implements Parcelable {
 	@Override
 	public void writeToParcel(Parcel out, int flags) {
 		out.writeString(_name);
-		out.writeList(_categories);
-		out.writeList(_items);
+		out.writeTypedList(_categories);
+		out.writeTypedList(_items);
 	}
 
 	public static final Parcelable.Creator<Category> CREATOR = new Parcelable.Creator<Category>() {

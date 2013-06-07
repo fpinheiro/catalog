@@ -7,6 +7,7 @@ import resource.Item;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,7 +21,9 @@ public class CategoryListActivity extends ListActivity {
 		setContentView(R.layout.category_list);
 
 		Intent i = getIntent();
-		Category category = (Category) i.getParcelableExtra("category");
+		Category category = null;
+		category = (Category) i.getParcelableExtra("category");
+		
 		ArrayList<Category> categories = category.get_categories();
 		ArrayList<Item> items = category.get_items();
 
@@ -30,9 +33,9 @@ public class CategoryListActivity extends ListActivity {
 
 		ListView lv = getListView();
 		ArrayAdapter adapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, list);
-		
+
 		lv.setAdapter(adapter);
-		
+
 		lv.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> a, View v, int position, long id) {
