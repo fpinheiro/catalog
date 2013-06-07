@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 import resource.Catalog;
 import resource.Category;
-import resource.Item;
 import resource.ResourceReader;
-import android.app.Activity;
+import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -15,50 +15,40 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class MainActivity extends Activity {
+public class MainActivity extends ListActivity {
 
 	ResourceReader rr;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.catalog_activity);
 
 		rr = new ResourceReader(getApplicationContext());
 		rr.read();
 
-		Catalog catalog = rr.generateCatalog();
-		final ListView listview = (ListView) findViewById(R.id.listView1);
+		final Catalog catalog = rr.generateCatalog();
+		ListView listview = getListView();
 
 		ArrayList<Category> categories = catalog.get_categories();
 		final ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, categories);
-		
+
 		listview.setAdapter(adapter);
 
 		listview.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-				Object selected = listview.getItemAtPosition(position);
+				Object selected = getListView().getItemAtPosition(position);
 
 				if (selected instanceof Category) {
-					ArrayList<Category> categories = ((Category) selected).get_categories();
-					ArrayList<Item> items = ((Category) selected).get_items();
+					Intent i = new Intent(getApplicationContext(), CategoryListActivity.class);
 
-					if (categories.size() > 0) {
-						adapter.clear();
-						for (Category cat : categories) {
-							adapter.add(cat);
-						}
-					} else {
-						adapter.clear();
-						for (Item i : items) {
-							adapter.add(i);
-						}
-					}
+					i.putExtra("category", (Category) selected);
+
+					startActivity(i);
 				}
 			}
 		});
-
 	}
 
 	@Override

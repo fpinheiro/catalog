@@ -3,13 +3,22 @@ package resource;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Category {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Category implements Parcelable {
 
 	private String _name;
 	private ArrayList<Category> _categories = new ArrayList<Category>();
 	private ArrayList<Item> _items = new ArrayList<Item>();
 
 	public Category() {
+	}
+
+	private Category(Parcel in) {
+		_name = in.readString();
+		 in.readList(_categories, null);
+		 in.readList(_items, null);
 	}
 
 	public Collection<? extends Item> getAllItems() {
@@ -20,12 +29,34 @@ public class Category {
 		}
 		return items;
 	}
-	
+
 	@Override
-	public String toString(){
+	public int describeContents() {
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel out, int flags) {
+		out.writeString(_name);
+		out.writeList(_categories);
+		out.writeList(_items);
+	}
+
+	public static final Parcelable.Creator<Category> CREATOR = new Parcelable.Creator<Category>() {
+		public Category createFromParcel(Parcel in) {
+			return new Category(in);
+		}
+
+		public Category[] newArray(int size) {
+			return new Category[size];
+		}
+	};
+
+	@Override
+	public String toString() {
 		return get_name();
 	}
-	
+
 	public String get_name() {
 		return _name;
 	}

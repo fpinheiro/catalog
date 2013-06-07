@@ -1,12 +1,15 @@
 package resource;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Represents a catalog item, with it's
  * 
  * @author fpinheiro
  * 
  */
-public class Item {
+public class Item implements Parcelable {
 
 	private String _name;
 	private String _photo;
@@ -14,18 +17,46 @@ public class Item {
 
 	public Item() {
 	}
-	
+
 	public Item(String name, String photo, String description) {
 		_name = name;
 		_photo = photo;
 		_description = description;
 	}
 	
+	private Item(Parcel in) {
+		_name = in.readString();
+		_photo = in.readString();
+		_description = in.readString();
+	}
+
 	@Override
-	public String toString(){
+	public int describeContents() {
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel out, int flags) {
+		out.writeString(_name);
+		out.writeString(_photo);
+		out.writeString(_description);
+	}
+
+	public static final Parcelable.Creator<Item> CREATOR = new Parcelable.Creator<Item>() {
+		public Item createFromParcel(Parcel in) {
+			return new Item(in);
+		}
+
+		public Item[] newArray(int size) {
+			return new Item[size];
+		}
+	};
+
+	@Override
+	public String toString() {
 		return get_name();
 	}
-	
+
 	public String get_name() {
 		return _name;
 	}
