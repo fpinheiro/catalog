@@ -33,6 +33,10 @@ public class ResourceReader {
 		_unzipLocation = _context.getFilesDir().getAbsolutePath() + "/";
 	}
 
+	public String getPhotoPath(String img){
+		return _unzipLocation + "img/" + img;
+	}
+	
 
 	/**
 	 * Parses the xml and generates the Catalog object.
