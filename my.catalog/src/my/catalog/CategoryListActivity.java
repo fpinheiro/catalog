@@ -4,9 +4,11 @@ import java.util.ArrayList;
 
 import resource.Category;
 import resource.Item;
+import android.app.ActionBar;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -18,11 +20,15 @@ public class CategoryListActivity extends ListActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.category_list);
+		
+		ActionBar ab = getActionBar();
+		ab.setDisplayHomeAsUpEnabled(true);
+		
 
 		Intent i = getIntent();
 		Category category = null;
 		category = (Category) i.getParcelableExtra("category");
-		
+
 		ArrayList<Category> categories = category.get_categories();
 		ArrayList<Item> items = category.get_items();
 
@@ -55,4 +61,17 @@ public class CategoryListActivity extends ListActivity {
 			}
 		});
 	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			// app icon in action bar clicked; go up
+			finish();
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
+	}
+	
 }
