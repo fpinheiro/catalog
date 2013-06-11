@@ -47,6 +47,10 @@ public class CategoryListActivity extends ListActivity {
 
 					startActivity(i);
 				} else if (selected instanceof Item) {
+					Intent i = new Intent(getApplicationContext(), ItemActivity.class);
+
+					i.putExtra("item", (Item) selected);
+					startActivity(i);
 				}
 			}
 		});

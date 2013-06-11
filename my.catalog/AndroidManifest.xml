@@ -28,6 +28,10 @@
             android:name="my.catalog.CategoryListActivity"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
+        <activity
+            android:name="my.catalog.ItemActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
     </application>
 
 </manifest>
