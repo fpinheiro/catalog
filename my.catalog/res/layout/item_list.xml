@@ -12,17 +12,4 @@
         android:layout_height="wrap_content"
         android:visibility="gone" />
 
-    <!-- Item Name -->
-
-    <TextView
-        android:id="@+id/item_name"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="15dip"
-        android:paddingLeft="10dip"
-        android:paddingTop="15dip"
-        android:textColor="#000000"
-        android:textSize="16dip"
-        android:textStyle="bold" />
-
 </RelativeLayout>

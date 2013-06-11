@@ -7,7 +7,6 @@ import resource.Item;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -32,7 +31,7 @@ public class CategoryListActivity extends ListActivity {
 		list.addAll(items);
 
 		ListView lv = getListView();
-		ArrayAdapter adapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, list);
+		final ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, list);
 
 		lv.setAdapter(adapter);
 
