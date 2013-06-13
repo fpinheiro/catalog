@@ -2,8 +2,9 @@ package my.catalog;
 
 import java.util.ArrayList;
 
+import resource.Catalog;
 import resource.Category;
-import resource.Item;
+import resource.ResourceReader;
 import android.app.ActionBar;
 import android.app.ListActivity;
 import android.content.Intent;
@@ -11,37 +12,35 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class CategoryListActivity extends ListActivity {
+public class CatalogActivity extends ListActivity {
+
+	ResourceReader rr;
 
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.category_list);
-		
-		Intent i = getIntent();
-		Category category = null;
-		category = (Category) i.getParcelableExtra("category");
+		setContentView(R.layout.catalog_activity);
+
+		rr = new ResourceReader(getApplicationContext());
+		rr.read();
+
+		final Catalog catalog = rr.generateCatalog();
+		ListView listview = getListView();
 		
 		ActionBar ab = getActionBar();
 		ab.setDisplayHomeAsUpEnabled(true);
-		ab.setTitle(category.get_name());
+		ab.setTitle(catalog.get_title());
 
-		ArrayList<Category> categories = category.get_categories();
-		ArrayList<Item> items = category.get_items();
+		ArrayList<Category> categories = catalog.get_categories();
+		final ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, categories);
 
-		ArrayList<Object> list = new ArrayList<Object>();
-		list.addAll(categories);
-		list.addAll(items);
+		listview.setAdapter(adapter);
 
-		ListView lv = getListView();
-		final ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, list);
-
-		lv.setAdapter(adapter);
-
-		lv.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
+		listview.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> a, View v, int position, long id) {
 				Object selected = getListView().getItemAtPosition(position);
@@ -51,11 +50,6 @@ public class CategoryListActivity extends ListActivity {
 
 					i.putExtra("category", (Category) selected);
 
-					startActivity(i);
-				} else if (selected instanceof Item) {
-					Intent i = new Intent(getApplicationContext(), ItemActivity.class);
-
-					i.putExtra("item", (Item) selected);
 					startActivity(i);
 				}
 			}
@@ -73,5 +67,5 @@ public class CategoryListActivity extends ListActivity {
 			return super.onOptionsItemSelected(item);
 		}
 	}
-	
+
 }

@@ -24,8 +24,9 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f090003;
+        public static final int action_settings=0x7f090004;
         public static final int imageView1=0x7f090002;
+        public static final int splash_screen_img=0x7f090003;
         public static final int textView1=0x7f090000;
         public static final int textView2=0x7f090001;
     }
@@ -33,6 +34,7 @@ public final class R {
         public static final int catalog_activity=0x7f030000;
         public static final int category_list=0x7f030001;
         public static final int item=0x7f030002;
+        public static final int splash_screen=0x7f030003;
     }
     public static final class menu {
         public static final int main=0x7f080000;

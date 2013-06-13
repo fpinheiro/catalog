@@ -24,6 +24,7 @@ public class ItemActivity extends Activity {
 
 		ActionBar ab = getActionBar();
 		ab.setDisplayHomeAsUpEnabled(true);
+		ab.setDisplayShowTitleEnabled(false);
 
 		Intent i = getIntent();
 		Item item = null;
