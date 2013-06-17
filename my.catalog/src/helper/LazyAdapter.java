@@ -20,13 +20,10 @@ public class LazyAdapter extends BaseAdapter {
 	private ArrayList<Object> list;
 	private static LayoutInflater inflater = null;
 
-	// public ImageLoader imageLoader;
-
 	public LazyAdapter(Activity a, ArrayList<Object> list) {
 		activity = a;
 		this.list = list;
 		inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		// imageLoader=new ImageLoader(activity.getApplicationContext());
 	}
 
 	public int getCount() {
@@ -54,15 +51,15 @@ public class LazyAdapter extends BaseAdapter {
 
 		if (obj instanceof Item) {
 			Item item = (Item) obj;
-			// Setting all values in listview
+			
 			title.setText(item.get_name());
 			subtitle.setText(item.get_description());
-			thumb_image.setImageBitmap(item.getBitMap(activity.getApplicationContext()));
+			thumb_image.setImageBitmap(item.getThumbPhoto(activity.getApplicationContext()));
 		} else if (obj instanceof Category) {
 			Category cat = (Category) obj;
-			// Setting all values in listview
+			
 			title.setText(cat.get_name());
-			subtitle.setText(cat.get_items().size() + " produtos.");
+//			subtitle.setText(cat.get_items().size() + " produtos.");
 		}
 		return vi;
 	}

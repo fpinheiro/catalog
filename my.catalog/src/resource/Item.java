@@ -18,6 +18,7 @@ public class Item implements Parcelable {
 
 	private String _name;
 	private String _photo;
+	private String _thumb_photo;
 	private String _description;
 
 	public Item() {
@@ -32,6 +33,7 @@ public class Item implements Parcelable {
 	private Item(Parcel in) {
 		_name = in.readString();
 		_photo = in.readString();
+		_thumb_photo = in.readString();
 		_description = in.readString();
 	}
 
@@ -44,6 +46,7 @@ public class Item implements Parcelable {
 	public void writeToParcel(Parcel out, int flags) {
 		out.writeString(_name);
 		out.writeString(_photo);
+		out.writeString(_thumb_photo);
 		out.writeString(_description);
 	}
 
@@ -57,10 +60,18 @@ public class Item implements Parcelable {
 		}
 	};
 
-	public Bitmap getBitMap(Context c){
+	public Bitmap getThumbPhoto(Context c){
+		return getBitMap(c, _thumb_photo);
+	}
+	
+	public Bitmap getMainPhoto(Context c){
+		return getBitMap(c, _photo);
+	}
+	
+	public Bitmap getBitMap(Context c, String path){
 		ResourceReader r = new ResourceReader(c);
-		String path = r.getPhotoPath(_photo);
-		File imgfile = new File(path);
+		String p = r.getPhotoPath(path);
+		File imgfile = new File(p);
 		if (imgfile.exists()) {
 			return BitmapFactory.decodeFile(imgfile.getAbsolutePath());
 		}
@@ -94,5 +105,13 @@ public class Item implements Parcelable {
 
 	public void set_description(String _description) {
 		this._description = _description;
+	}
+
+	public String get_thumb_photo() {
+		return _thumb_photo;
+	}
+
+	public void set_thumb_photo(String _thumb_photo) {
+		this._thumb_photo = _thumb_photo;
 	}
 }

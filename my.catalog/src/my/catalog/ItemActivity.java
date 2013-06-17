@@ -25,7 +25,7 @@ public class ItemActivity extends Activity {
 		Item item = null;
 		item = (Item) i.getParcelableExtra("item");
 
-		Log.i("Catalog", item.get_name());
+		Log.i("Catalog", item.get_thumb_photo());
 
 		TextView title = (TextView) findViewById(R.id.textView1);
 		title.setText(item.get_name());
@@ -34,7 +34,7 @@ public class ItemActivity extends Activity {
 		description.setText(item.get_description());
 		
 		ImageView img = (ImageView) findViewById(R.id.imageView1);
-		img.setImageBitmap(item.getBitMap(getApplicationContext()));
+		img.setImageBitmap(item.getMainPhoto(getApplicationContext()));
 	}
 
 	@Override

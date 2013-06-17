@@ -5,12 +5,12 @@
 		<name>Monitor</name>
 		<item>
 			<name>LG E41 15.6'</name>
-			<photo>LGE1641C_t.jpg</photo>
+			<icon>LGE1641C_t.jpg</icon>
 			<description>Monitor LED LCD LG Widescreen com 15,6", Resolução 1.366 × 768 @ 60Hz, Tempo de Resposta 16ms e Conexão D-Sub</description>
 		</item>
 		<item>
 			<name>Samsung 21.5' Full HD</name>
-			<photo>SGLS19B300BSLZ_t.jpg</photo>
+			<icon>SGLS19B300BSLZ_t.jpg</icon>
 			<description>Monitor Samsung com 21.5", Resolução Full HD, Brilho 250cd/m2 e Tempo de Resposta 5ms</description>
 		</item>
 	</category>
@@ -18,12 +18,12 @@
 		<name>Computador</name>
 		<item>
 			<name>Samsung 530U3CAD3</name>
-			<photo>SG530U3CAD3_t.jpg</photo>
+			<icon>SG530U3CAD3_t.jpg</icon>
 			<description>UltrabookTM Samsung 530U3CAD3 com 2ª Geração do Processador Intel® CoreTM i5 2537M, 4GB de Memória, 500GB de HD, Tela 13.3" e Windows®</description>
 		</item>
 		<item>
 			<name>Mac Book Pro 15'</name>
-			<photo>macbookpro15.jpg</photo>
+			<icon>macbookpro15.jpg</icon>
 		</item>
 	</category>
 	<category>
@@ -32,7 +32,7 @@
 			<name>Samsung</name>
 			<item>
 				<name>Samsung Galaxy SIII</name>
-				<photo>SGI9300_t.jpg</photo>
+				<icon>SGI9300_t.jpg</icon>
 				<description>Smartphone Samsung Galaxy S III I9300 Azul com Display de Super AMOLED de 4,8", 3G + Wi-Fi, Android 4.0, Processador Quad Core 1.4Ghz, Câmera de 8.0MP, Vídeos em Full HD e Memória de 16GB</description>
 			</item>
 		</category>
@@ -40,17 +40,17 @@
 			<name>LG</name>
 			<item>
 				<name>LG Optimus L5</name>
-				<photo>LGE455_BC_t.jpg</photo>
+				<icon>LGE455_BC_t.jpg</icon>
 				<description>Celular Smartphone LG Optimus L5 II Dual E455 Branco Tela de 4", 3G + Wi-Fi, Android 4.1 Jelly Bean, Câmera 5MP com Flash, Processador de 1Ghz, Bluetooth e MP3</description>
 			</item>
 			<item>
 				<name>LG Optimus G E977</name>
-				<photo>LGE977_t.jpg</photo>
+				<icon>LGE977_t.jpg</icon>
 				<description>Smartphone LG Optimus G E977 Preto Android Jelly Bean 4.1, 4G, Processador Qualcomm SnapdragonTM S4 Pro 1.5 Quad-Core, Tela True HD IPS Plus 4.7" WXGA, Memória Interna de 32GB e Câmera 13 MP</description>
 			</item>
 			<item>
 				<name>LG Optimus L5 II</name>
-				<photo>LGE455_t.jpg</photo>
+				<icon>LGE455_t.jpg</icon>
 				<description>Smartphone LG Optimus L5 II Dual Chip E455 com Tela de 4", 3G + Wi-Fi, Android 4.1 Jelly Bean, Câmera 5MP com Flash, Processador de 1Ghz, Bluetooth e MP3</description>
 			</item>
 		</category>

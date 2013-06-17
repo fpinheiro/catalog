@@ -14,7 +14,7 @@ public class XmlParser {
 
 	public XmlParser() {
 	}
-	
+
 	public Catalog parse(StringReader in) throws XmlPullParserException, IOException {
 		try {
 			XmlPullParser parser = Xml.newPullParser();
@@ -82,6 +82,8 @@ public class XmlParser {
 				item.set_name(readName(parser));
 			} else if (tagName.equals("photo")) {
 				item.set_photo(readPhoto(parser));
+			} else if (tagName.equals("icon")) {
+				item.set_thumb_photo(readIcon(parser));
 			} else if (tagName.equals("description")) {
 				item.set_description(readDescription(parser));
 			} else {
@@ -110,6 +112,13 @@ public class XmlParser {
 		String photo = readText(parser);
 		parser.require(XmlPullParser.END_TAG, ns, "photo");
 		return photo;
+	}
+	
+	private String readIcon(XmlPullParser parser) throws IOException, XmlPullParserException {
+		parser.require(XmlPullParser.START_TAG, ns, "icon");
+		String icon = readText(parser);
+		parser.require(XmlPullParser.END_TAG, ns, "icon");
+		return icon;
 	}
 
 	private String readDescription(XmlPullParser parser) throws IOException, XmlPullParserException {

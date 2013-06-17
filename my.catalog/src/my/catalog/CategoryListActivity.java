@@ -38,7 +38,6 @@ public class CategoryListActivity extends ListActivity {
 		list.addAll(items);
 
 		ListView lv = getListView();
-//		final ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, list);
 		
 		LazyAdapter adapter = new LazyAdapter(this, list);
 		
