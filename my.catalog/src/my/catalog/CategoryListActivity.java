@@ -1,5 +1,7 @@
 package my.catalog;
 
+import helper.LazyAdapter;
+
 import java.util.ArrayList;
 
 import resource.Category;
@@ -11,7 +13,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class CategoryListActivity extends ListActivity {
@@ -37,8 +38,10 @@ public class CategoryListActivity extends ListActivity {
 		list.addAll(items);
 
 		ListView lv = getListView();
-		final ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, list);
-
+//		final ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, list);
+		
+		LazyAdapter adapter = new LazyAdapter(this, list);
+		
 		lv.setAdapter(adapter);
 
 		lv.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {

@@ -1,5 +1,7 @@
 package my.catalog;
 
+import helper.LazyAdapter;
+
 import java.util.ArrayList;
 
 import resource.Catalog;
@@ -30,13 +32,15 @@ public class CatalogActivity extends ListActivity {
 
 		final Catalog catalog = rr.generateCatalog();
 		ListView listview = getListView();
-		
+
 		ActionBar ab = getActionBar();
 		ab.setDisplayHomeAsUpEnabled(true);
 		ab.setTitle(catalog.get_title());
 
-		ArrayList<Category> categories = catalog.get_categories();
-		final ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, categories);
+		ArrayList<Object> categories = new ArrayList<Object>(); 
+		categories.addAll(catalog.get_categories());
+		
+		LazyAdapter adapter = new LazyAdapter(this, categories);
 
 		listview.setAdapter(adapter);
 
