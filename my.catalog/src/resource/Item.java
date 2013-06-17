@@ -1,5 +1,10 @@
 package resource;
 
+import java.io.File;
+
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -52,6 +57,16 @@ public class Item implements Parcelable {
 		}
 	};
 
+	public Bitmap getBitMap(Context c){
+		ResourceReader r = new ResourceReader(c);
+		String path = r.getPhotoPath(_photo);
+		File imgfile = new File(path);
+		if (imgfile.exists()) {
+			return BitmapFactory.decodeFile(imgfile.getAbsolutePath());
+		}
+		return null;
+	}
+	
 	@Override
 	public String toString() {
 		return get_name();

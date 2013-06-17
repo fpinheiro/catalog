@@ -22,6 +22,7 @@ public class Unzip {
 		_location = location;
 
 		_dirChecker("");
+		_dirChecker("img");
 	}
 
 	public Boolean unzip() {

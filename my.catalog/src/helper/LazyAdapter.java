@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class LazyAdapter extends BaseAdapter {
@@ -46,9 +47,8 @@ public class LazyAdapter extends BaseAdapter {
 			vi = inflater.inflate(R.layout.item_row, null);
 
 		TextView title = (TextView) vi.findViewById(R.id.title);
-		TextView artist = (TextView) vi.findViewById(R.id.subtitle);
-		// ImageView thumb_image=(ImageView)vi.findViewById(R.id.list_image); //
-		// thumb image
+		TextView subtitle = (TextView) vi.findViewById(R.id.subtitle);
+		ImageView thumb_image = (ImageView) vi.findViewById(R.id.list_image);
 
 		Object obj = list.get(position);
 
@@ -56,16 +56,13 @@ public class LazyAdapter extends BaseAdapter {
 			Item item = (Item) obj;
 			// Setting all values in listview
 			title.setText(item.get_name());
-			artist.setText(item.get_description());
-			// imageLoader.DisplayImage(song.get(CustomizedListView.KEY_THUMB_URL),
-			// thumb_image);
+			subtitle.setText(item.get_description());
+			thumb_image.setImageBitmap(item.getBitMap(activity.getApplicationContext()));
 		} else if (obj instanceof Category) {
 			Category cat = (Category) obj;
 			// Setting all values in listview
 			title.setText(cat.get_name());
-			artist.setText(cat.get_items().size()+" produtos.");
-			// imageLoader.DisplayImage(song.get(CustomizedListView.KEY_THUMB_URL),
-			// thumb_image);
+			subtitle.setText(cat.get_items().size() + " produtos.");
 		}
 		return vi;
 	}

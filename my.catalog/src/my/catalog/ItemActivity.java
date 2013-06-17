@@ -1,14 +1,9 @@
 package my.catalog;
 
-import java.io.File;
-
 import resource.Item;
-import resource.ResourceReader;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -35,20 +30,11 @@ public class ItemActivity extends Activity {
 		TextView title = (TextView) findViewById(R.id.textView1);
 		title.setText(item.get_name());
 
-		ResourceReader r = new ResourceReader(getApplicationContext());
-		String path = r.getPhotoPath(item.get_photo());
-
 		TextView description = (TextView) findViewById(R.id.textView2);
 		description.setText(item.get_description());
-
-		File imgfile = new File(path);
-		if (imgfile.exists()) {
-			Bitmap myBitmap = BitmapFactory.decodeFile(imgfile.getAbsolutePath());
-
-			ImageView img = (ImageView) findViewById(R.id.imageView1);
-			img.setImageBitmap(myBitmap);
-		}
-
+		
+		ImageView img = (ImageView) findViewById(R.id.imageView1);
+		img.setImageBitmap(item.getBitMap(getApplicationContext()));
 	}
 
 	@Override
