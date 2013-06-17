@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <catalog>
-	<title>FastShop Catalog</title>
+	<title>FastShop</title>
 	<category>
 		<name>Monitor</name>
+		<photo>monitor.png</photo>
 		<item>
 			<name>LG E41 15.6'</name>
 			<icon>LGE1641C_t.jpg</icon>
@@ -16,7 +17,8 @@
 		</item>
 	</category>
 	<category>
-		<name>Computador</name>
+		<name>Notebook</name>
+		<photo>notebook.png</photo>
 		<item>
 			<name>Samsung 530U3CAD3</name>
 			<icon>SG530U3CAD3_t.jpg</icon>
@@ -32,8 +34,10 @@
 	</category>
 	<category>
 		<name>Smartphone</name>
+		<photo>smartphone.png</photo>
 		<category>
 			<name>Samsung</name>
+			<photo>samsung.jpg</photo>
 			<item>
 				<name>Samsung Galaxy SIII</name>
 				<icon>SGI9100_t.jpg</icon>
@@ -49,6 +53,7 @@
 		</category>
 		<category>
 			<name>LG</name>
+			<photo>lg.jpg</photo>
 			<item>
 				<name>LG Optimus L5</name>
 				<icon>LGE455_BC_t.jpg</icon>

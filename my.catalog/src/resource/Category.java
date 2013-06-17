@@ -1,22 +1,28 @@
 package resource;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Category implements Parcelable {
 
 	private String _name;
+	private String _photo;
 	private ArrayList<Category> _categories = new ArrayList<Category>();
 	private ArrayList<Item> _items = new ArrayList<Item>();
-
+	
 	public Category() {
 	}
 
 	private Category(Parcel in) {
 		_name = in.readString();
+		_photo = in.readString();
 		 in.readTypedList(_categories, Category.CREATOR);
 		 in.readTypedList(_items, Item.CREATOR);
 	}
@@ -38,6 +44,7 @@ public class Category implements Parcelable {
 	@Override
 	public void writeToParcel(Parcel out, int flags) {
 		out.writeString(_name);
+		out.writeString(_photo);
 		out.writeTypedList(_categories);
 		out.writeTypedList(_items);
 	}
@@ -52,6 +59,16 @@ public class Category implements Parcelable {
 		}
 	};
 
+	public Bitmap getPhoto(Context c){
+		ResourceReader r = new ResourceReader(c);
+		String p = r.getPhotoPath(_photo);
+		File imgfile = new File(p);
+		if (imgfile.exists()) {
+			return BitmapFactory.decodeFile(imgfile.getAbsolutePath());
+		}
+		return null;
+	}
+	
 	@Override
 	public String toString() {
 		return get_name();
@@ -79,5 +96,13 @@ public class Category implements Parcelable {
 
 	public void set_name(String _name) {
 		this._name = _name;
+	}
+
+	public String get_photo() {
+		return _photo;
+	}
+
+	public void set_photo(String _photo) {
+		this._photo = _photo;
 	}
 }

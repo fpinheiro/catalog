@@ -11,11 +11,9 @@ import android.app.ActionBar;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class CatalogActivity extends ListActivity {
@@ -34,7 +32,7 @@ public class CatalogActivity extends ListActivity {
 		ListView listview = getListView();
 
 		ActionBar ab = getActionBar();
-		ab.setDisplayHomeAsUpEnabled(true);
+//		ab.setDisplayHomeAsUpEnabled(true);
 		ab.setTitle(catalog.get_title());
 
 		ArrayList<Object> categories = new ArrayList<Object>(); 
@@ -60,16 +58,16 @@ public class CatalogActivity extends ListActivity {
 		});
 	}
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case android.R.id.home:
-			// app icon in action bar clicked; go up
-			finish();
-			return true;
-		default:
-			return super.onOptionsItemSelected(item);
-		}
-	}
+//	@Override
+//	public boolean onOptionsItemSelected(MenuItem item) {
+//		switch (item.getItemId()) {
+//		case android.R.id.home:
+//			// app icon in action bar clicked; go up
+//			finish();
+//			return true;
+//		default:
+//			return super.onOptionsItemSelected(item);
+//		}
+//	}
 
 }

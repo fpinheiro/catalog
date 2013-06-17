@@ -59,7 +59,8 @@ public class LazyAdapter extends BaseAdapter {
 			Category cat = (Category) obj;
 			
 			title.setText(cat.get_name());
-			subtitle.setText("");
+			subtitle.setText(cat.getAllItems().toString()+" produto(s).");
+			thumb_image.setImageBitmap(cat.getPhoto(activity.getApplicationContext()));
 		}
 		return vi;
 	}

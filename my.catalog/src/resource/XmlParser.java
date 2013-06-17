@@ -59,6 +59,8 @@ public class XmlParser {
 			String tagName = parser.getName();
 			if (tagName.equals("name")) {
 				category.set_name(readName(parser));
+			}else if (tagName.equals("photo")) {
+				category.set_photo(readPhoto(parser));
 			} else if (tagName.equals("item")) {
 				category.get_items().add(readItem(parser));
 			} else if (tagName.equals("category")) {
@@ -113,7 +115,7 @@ public class XmlParser {
 		parser.require(XmlPullParser.END_TAG, ns, "photo");
 		return photo;
 	}
-	
+
 	private String readIcon(XmlPullParser parser) throws IOException, XmlPullParserException {
 		parser.require(XmlPullParser.START_TAG, ns, "icon");
 		String icon = readText(parser);
