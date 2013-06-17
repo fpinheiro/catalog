@@ -78,6 +78,10 @@ public class Item implements Parcelable {
 		return null;
 	}
 	
+	public String getShortDescription(){
+		return _description.substring(0, _name.length() + 15) + "...";
+	}
+	
 	@Override
 	public String toString() {
 		return get_name();

@@ -53,13 +53,13 @@ public class LazyAdapter extends BaseAdapter {
 			Item item = (Item) obj;
 			
 			title.setText(item.get_name());
-			subtitle.setText(item.get_description());
+			subtitle.setText(item.getShortDescription());
 			thumb_image.setImageBitmap(item.getThumbPhoto(activity.getApplicationContext()));
 		} else if (obj instanceof Category) {
 			Category cat = (Category) obj;
 			
 			title.setText(cat.get_name());
-//			subtitle.setText(cat.get_items().size() + " produtos.");
+			subtitle.setText("");
 		}
 		return vi;
 	}

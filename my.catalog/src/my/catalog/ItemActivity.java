@@ -25,7 +25,7 @@ public class ItemActivity extends Activity {
 		Item item = null;
 		item = (Item) i.getParcelableExtra("item");
 
-		Log.i("Catalog", item.get_thumb_photo());
+//		Log.i("Catalog", item.get_thumb_photo());
 
 		TextView title = (TextView) findViewById(R.id.textView1);
 		title.setText(item.get_name());

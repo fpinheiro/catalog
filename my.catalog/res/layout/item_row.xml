@@ -4,25 +4,27 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="5dip" >
- 
-    <!--  ListRow Left side Thumbnail image -->
-    <LinearLayout android:id="@+id/thumbnail"
+
+    <!-- ListRow Left side Thumbnail image -->
+
+    <LinearLayout
+        android:id="@+id/thumbnail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="3dip"
         android:layout_alignParentLeft="true"
+        android:layout_marginRight="5dip"
         android:background="@drawable/image_bg"
-        android:layout_marginRight="5dip">
- 
+        android:padding="3dip" >
+
         <ImageView
             android:id="@+id/list_image"
             android:layout_width="50dip"
             android:layout_height="50dip"
-            android:src="@drawable/ic_launcher"/>
- 
+            android:src="@drawable/ic_launcher" />
     </LinearLayout>
- 
+
     <!-- Title -->
+
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
@@ -31,27 +33,32 @@
         android:layout_toRightOf="@+id/thumbnail"
         android:text="Title"
         android:textColor="#040404"
-        android:typeface="sans"
         android:textSize="15dip"
-        android:textStyle="bold"/>
- 
+        android:textStyle="bold"
+        android:typeface="sans" />
+
     <!-- Subtitle -->
+
     <TextView
         android:id="@+id/subtitle"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/thumbnail"
         android:layout_below="@id/title"
-        android:textColor="#343434"
-        android:textSize="10dip"
         android:layout_marginTop="1dip"
+        android:layout_toLeftOf="@+id/imageView1"
         android:layout_toRightOf="@+id/thumbnail"
-        android:text="Subtitle" />
- 
-     <!-- Rightend Arrow -->
-     <ImageView android:layout_width="wrap_content"
+        android:text="Subtitle"
+        android:textColor="#343434"
+        android:textSize="10dip" />
+
+    <!-- Rightend Arrow -->
+
+    <ImageView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/navigation_next_item"
         android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"/>
- 
+        android:layout_centerVertical="true"
+        android:src="@drawable/navigation_next_item" />
+
 </RelativeLayout>
