@@ -5,7 +5,6 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -25,8 +24,6 @@ public class ItemActivity extends Activity {
 		Item item = null;
 		item = (Item) i.getParcelableExtra("item");
 
-//		Log.i("Catalog", item.get_thumb_photo());
-
 		TextView title = (TextView) findViewById(R.id.textView1);
 		title.setText(item.get_name());
 
@@ -41,7 +38,6 @@ public class ItemActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case android.R.id.home:
-			// app icon in action bar clicked; go up
 			finish();
 			return true;
 		default:
