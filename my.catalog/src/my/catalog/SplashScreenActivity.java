@@ -17,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Gallery;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class SplashScreenActivity extends Activity {
 
@@ -37,6 +38,9 @@ public class SplashScreenActivity extends Activity {
 		final ImageView iv = (ImageView) findViewById(R.id.imageView1);
 		iv.setImageBitmap(item.getMainPhoto(getApplicationContext()));
 		
+		final TextView tv = (TextView)findViewById(R.id.textView1);
+		tv.setText(item.get_name());
+		
 		Gallery gallery = (Gallery)findViewById(R.id.gallery1);
 		gallery.setAdapter(new ImageAdapter(this, items));
 		gallery.setOnItemClickListener(new OnItemClickListener() {
@@ -47,6 +51,7 @@ public class SplashScreenActivity extends Activity {
 				
 				Item i = (Item) ad.getItem(position);
 				iv.setImageBitmap(i.getMainPhoto(getApplicationContext()));
+				tv.setText(i.get_name());
 			}
 		});
 	}
