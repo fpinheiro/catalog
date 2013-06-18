@@ -18,16 +18,14 @@ public class ItemActivity extends Activity {
 
 		ActionBar ab = getActionBar();
 		ab.setDisplayHomeAsUpEnabled(true);
-		ab.setDisplayShowTitleEnabled(false);
 
 		Intent i = getIntent();
 		Item item = null;
 		item = (Item) i.getParcelableExtra("item");
+		
+		ab.setTitle(item.get_name());
 
-		TextView title = (TextView) findViewById(R.id.textView1);
-		title.setText(item.get_name());
-
-		TextView description = (TextView) findViewById(R.id.textView2);
+		TextView description = (TextView) findViewById(R.id.textView1);
 		description.setText(item.get_description());
 		
 		ImageView img = (ImageView) findViewById(R.id.imageView1);
