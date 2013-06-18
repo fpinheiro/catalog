@@ -49,7 +49,7 @@ This project assumes that the establishment in question will maintain its produc
 + Usability: the application interface should be focused in fast performance and pleasant user interaction design.
 
 ### Prototype Link
-[http://indigo.infragistics.com/prototype/29NY2YHK](http://indigo.infragistics.com/prototype/29NY2YHK "http://indigo.infragistics.com/prototype/29NY2YHK")
+[http://indigo.infragistics.com/prototype/PYAY5IXU.html](http://indigo.infragistics.com/prototype/PYAY5IXU.html "http://indigo.infragistics.com/prototype/PYAY5IXU.html")
 
 ---
 
@@ -152,3 +152,13 @@ accessible through the feature Show Catalog and Show Catalog's Map.
 2. A screen appears with all the product details, as illustrated by the prototype below.
 
 ![](details.png)
+
+
+
+#### For meeting 2
+
+1. introduce an icon to distinguish "category" and "item" while browsing the XML with the application.
+2. add "breadcrumbs" to allow see the level of XML all times.
+3. first line should be an action bar, with home button, name of last category, and in the line below, the complete breadcrumbs.
+4. add option to unzip to sdcard.
+5. splash screen (share intent).
