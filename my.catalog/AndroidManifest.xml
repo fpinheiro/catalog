@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="my.catalog"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0"
+    android:name=".MyCatalogApp" >
 
     <uses-sdk
         android:minSdkVersion="11"
@@ -14,9 +15,10 @@
         android:allowBackup="true"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme" 
+        android:name=".MyCatalogApp">
         <activity
-            android:name="my.catalog.CatalogActivity"
+            android:name="my.catalog.MainActivity"
             android:theme="@android:style/Theme.Holo.Light" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,10 +26,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<!--         <activity
+        <activity
             android:name="my.catalog.CatalogActivity"
             android:theme="@android:style/Theme.Holo.Light" >
-        </activity> -->
+        </activity>
         <activity
             android:name="my.catalog.CategoryListActivity"
             android:theme="@android:style/Theme.Holo.Light" >

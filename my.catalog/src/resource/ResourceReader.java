@@ -27,6 +27,7 @@ public class ResourceReader {
 	private Context _context;
 
 	public String xml;
+	public Catalog catalog;
 
 	public ResourceReader(Context context) {
 		_context = context;
@@ -44,9 +45,10 @@ public class ResourceReader {
 	 * @author fpinheiro
 	 */
 	public Catalog generateCatalog(){
+		if(catalog != null)
+			return catalog;
 		
 		XmlParser xmlParser = new XmlParser();
-		Catalog catalog = null;
 		try {
 			catalog = xmlParser.parse(new StringReader(xml));
 		} catch (XmlPullParserException e) {
@@ -134,5 +136,9 @@ public class ResourceReader {
 		}
 		Log.i("Catalog", "Catalog xml file read with success.");
 		return retXml;
+	}
+
+	public Catalog getCatalog() {
+		return generateCatalog();
 	}
 }
