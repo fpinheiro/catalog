@@ -21,16 +21,18 @@ public final class R {
         public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int gradient_bg=0x7f020000;
-        public static final int gradient_bg_hover=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
-        public static final int image_bg=0x7f020003;
-        public static final int list_selector=0x7f020004;
-        public static final int logo=0x7f020005;
-        public static final int navigation_next_item=0x7f020006;
+        public static final int device_access_storage=0x7f020000;
+        public static final int fastshop=0x7f020001;
+        public static final int gradient_bg=0x7f020002;
+        public static final int gradient_bg_hover=0x7f020003;
+        public static final int ic_launcher=0x7f020004;
+        public static final int image_bg=0x7f020005;
+        public static final int list_selector=0x7f020006;
+        public static final int logo=0x7f020007;
+        public static final int navigation_next_item=0x7f020008;
     }
     public static final class id {
-        public static final int action_settings=0x7f090007;
+        public static final int action_navigate=0x7f090007;
         public static final int imageView1=0x7f090002;
         public static final int list_image=0x7f090004;
         public static final int subtitle=0x7f090006;
@@ -45,6 +47,7 @@ public final class R {
         public static final int item=0x7f030002;
         public static final int item_row=0x7f030003;
         public static final int splash_screen=0x7f030004;
+        public static final int start=0x7f030005;
     }
     public static final class menu {
         public static final int main=0x7f080000;
@@ -55,6 +58,7 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f060001;
         public static final int app_name=0x7f060000;
+        public static final int catalog_map=0x7f060005;
         public static final int hello_world=0x7f060002;
         public static final int unzipButton=0x7f060003;
         public static final int up_tree=0x7f060004;

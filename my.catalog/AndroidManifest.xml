@@ -19,13 +19,17 @@
         android:name=".MyCatalogApp">
         <activity
             android:name="my.catalog.MainActivity"
-            android:theme="@android:style/Theme.Holo.Light" >
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="my.catalog.SplashScreenActivity"
+            android:theme="@android:style/Theme.Holo.Light" >
+        </activity>        
         <activity
             android:name="my.catalog.CatalogActivity"
             android:theme="@android:style/Theme.Holo.Light" >

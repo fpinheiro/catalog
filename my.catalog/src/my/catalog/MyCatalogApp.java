@@ -18,6 +18,5 @@ public class MyCatalogApp extends Application {
 		singleton = this;
 
 		rr = new ResourceReader(getApplicationContext());
-		rr.read();
 	}
 }

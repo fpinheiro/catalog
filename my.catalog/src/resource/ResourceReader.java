@@ -137,8 +137,4 @@ public class ResourceReader {
 		Log.i("Catalog", "Catalog xml file read with success.");
 		return retXml;
 	}
-
-	public Catalog getCatalog() {
-		return generateCatalog();
-	}
 }

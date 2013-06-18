@@ -8,10 +8,7 @@ public class AlertDialogManager {
 	public void showAlertDialog(Context context, String title, String message, Boolean status) {
 		AlertDialog alertDialog = new AlertDialog.Builder(context).create();
 
-		// Setting Dialog Title
 		alertDialog.setTitle(title);
-
-		// Setting Dialog Message
 		alertDialog.setMessage(message);
 
 		// if (status != null)
@@ -24,7 +21,6 @@ public class AlertDialogManager {
 			}
 		});
 
-		// Showing Alert Message
 		alertDialog.show();
 	}
 }

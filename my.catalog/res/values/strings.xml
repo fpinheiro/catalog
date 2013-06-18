@@ -6,5 +6,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="unzipButton">unzip file</string>
     <string name="up_tree">voltar</string>
+    <string name="catalog_map">Navegar</string>
 
 </resources>

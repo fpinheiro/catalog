@@ -1,33 +1,37 @@
 package my.catalog;
 
-import java.util.ArrayList;
-
-import resource.Catalog;
-import resource.Item;
 import resource.ResourceReader;
-import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ImageView;
+import android.util.Log;
 
 public class MainActivity extends Activity {
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.splash_screen);
+	final ResourceReader rr = MyCatalogApp.getInstance().rr;
 
-		ResourceReader rr = MyCatalogApp.getInstance().rr;
-		Catalog catalog = rr.getCatalog();
-		
-		// Action Bar
-		ActionBar ab = getActionBar();
-		ab.setTitle(catalog.get_title());
-		
+	protected void onCreate(Bundle icicle) {
+		super.onCreate(icicle);
+		setContentView(R.layout.start);
 
-		ArrayList<Item> items = catalog.getAllItems();
-		
-		ImageView iv = (ImageView) findViewById(R.id.imageView1);
-		iv.setImageBitmap(items.get(1).getMainPhoto(getApplicationContext()));
+		IntentLauncher launcher = new IntentLauncher();
+		launcher.start();
+	}
+
+	private class IntentLauncher extends Thread {
+		@Override
+		public void run() {
+			try {
+				rr.read();
+				rr.generateCatalog();
+			} catch (Exception e) {
+				Log.e("Catalog", e.getMessage());
+			}
+
+			// Start main activity
+			Intent intent = new Intent(MainActivity.this, SplashScreenActivity.class);
+			MainActivity.this.startActivity(intent);
+			MainActivity.this.finish();
+		}
 	}
 }
