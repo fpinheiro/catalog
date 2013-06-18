@@ -32,7 +32,8 @@ public final class R {
         public static final int navigation_next_item=0x7f020008;
     }
     public static final class id {
-        public static final int action_navigate=0x7f090006;
+        public static final int action_navigate=0x7f090007;
+        public static final int gallery1=0x7f090006;
         public static final int imageView1=0x7f090000;
         public static final int list_image=0x7f090003;
         public static final int subtitle=0x7f090005;

@@ -12,8 +12,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Gallery;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 public class SplashScreenActivity extends Activity {
 
@@ -31,11 +34,21 @@ public class SplashScreenActivity extends Activity {
 
 		ArrayList<Item> items = catalog.getAllItems();
 		Item item = items.get(0);
-		ImageView iv = (ImageView) findViewById(R.id.imageView1);
+		final ImageView iv = (ImageView) findViewById(R.id.imageView1);
 		iv.setImageBitmap(item.getMainPhoto(getApplicationContext()));
+		
+		Gallery gallery = (Gallery)findViewById(R.id.gallery1);
+		gallery.setAdapter(new ImageAdapter(this, items));
+		gallery.setOnItemClickListener(new OnItemClickListener() {
 
-		TextView title = (TextView) findViewById(R.id.textView1);
-		title.setText(item.get_name());
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				ImageAdapter ad = (ImageAdapter)parent.getAdapter();
+				
+				Item i = (Item) ad.getItem(position);
+				iv.setImageBitmap(i.getMainPhoto(getApplicationContext()));
+			}
+		});
 	}
 
 	@Override
