@@ -47,6 +47,8 @@ public class ResourceReader {
 	public Catalog generateCatalog(){
 		if(catalog != null)
 			return catalog;
+		if(xml == null)
+			read();
 		
 		XmlParser xmlParser = new XmlParser();
 		try {

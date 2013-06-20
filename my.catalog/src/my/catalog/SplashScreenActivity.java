@@ -22,13 +22,14 @@ import android.widget.TextView;
 public class SplashScreenActivity extends Activity {
 
 	final ResourceReader rr = MyCatalogApp.getInstance().rr;
-	private final  Catalog catalog = rr.generateCatalog();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.splash_screen);
 
+		Catalog catalog = rr.generateCatalog();
+		
 		// Action Bar
 		ActionBar ab = getActionBar();
 		ab.setTitle(catalog.get_title());
