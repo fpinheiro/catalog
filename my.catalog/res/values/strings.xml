@@ -7,5 +7,7 @@
     <string name="unzipButton">unzip file</string>
     <string name="up_tree">voltar</string>
     <string name="catalog_map">Navegar</string>
+    <string name="loading">Lendo catálogo.</string>
+    <string name="be_cool">Fique tranquilo que é só desta vez...</string>
 
 </resources>
