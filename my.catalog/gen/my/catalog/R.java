@@ -42,6 +42,7 @@ public final class R {
         public static final int textView2=0x7f090007;
         public static final int thumbnail=0x7f090002;
         public static final int title=0x7f090004;
+        public static final int update_catalog=0x7f09000a;
     }
     public static final class layout {
         public static final int catalog_activity=0x7f030000;
@@ -66,6 +67,7 @@ public final class R {
         public static final int loading=0x7f060006;
         public static final int unzipButton=0x7f060003;
         public static final int up_tree=0x7f060004;
+        public static final int update_catalog=0x7f060008;
     }
     public static final class style {
         /** 

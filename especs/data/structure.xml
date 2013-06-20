@@ -2,22 +2,6 @@
 <catalog>
 	<title>FastShop</title>
 	<category>
-		<name>Monitor</name>
-		<photo>monitor.png</photo>
-		<item>
-			<name>LG E41 15.6'</name>
-			<icon>LGE1641C_t.jpg</icon>
-			<photo>LGE1641C_g.jpg</photo>
-			<description>Monitor LED LCD LG Widescreen com 15,6", Resolução 1.366 × 768 @ 60Hz, Tempo de Resposta 16ms e Conexão D-Sub</description>
-		</item>
-		<item>
-			<name>Samsung 21.5' Full HD</name>
-			<icon>SGLS19B300BSLZ_t.jpg</icon>
-			<photo>SGLS19B300BSLZ_g.jpg</photo>
-			<description>Monitor Samsung com 21.5", Resolução Full HD, Brilho 250cd/m2 e Tempo de Resposta 5ms</description>
-		</item>
-	</category>
-	<category>
 		<name>Notebook</name>
 		<photo>notebook.png</photo>
 		<item>
