@@ -156,7 +156,8 @@ public class SplashScreenActivity extends Activity {
 				while ((count = input.read(data)) != -1) {
 					total += count;
 					// publishing the progress....
-					publishProgress((int) (total * 100 / fileLength));
+					Integer progress = (int) (total * 100 / fileLength); 
+					publishProgress(progress);
 					out.write(data, 0, count);
 				}
 
@@ -171,14 +172,16 @@ public class SplashScreenActivity extends Activity {
 			return null;
 		}
 
-		protected void onProgressUpdate(String... progress) {
-			Log.d("Catalog", progress[0]);
-			mProgressDialog.setProgress(Integer.parseInt(progress[0]));
+		@Override
+		protected void onProgressUpdate(Integer... progress) {
+			mProgressDialog.setProgress(progress[0]);
 		}
 
 		@Override
 		protected void onPostExecute(String unused) {
-			dismissDialog(DIALOG_DOWNLOAD_PROGRESS);
+			mProgressDialog.dismiss();
+			Intent i = new Intent(getApplicationContext(), MainActivity.class);
+			
 		}
 	}
 
