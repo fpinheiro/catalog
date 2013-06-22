@@ -1,6 +1,7 @@
 package my.catalog;
 
 import java.io.BufferedInputStream;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -111,7 +112,7 @@ public class SplashScreenActivity extends Activity {
 
 	private void updateCatalog() {
 		// execute this when the downloader must be fired
-		String output = "storage/sdcard0/files/data.zip";
+		String output = getApplicationContext().getFilesDir().getAbsolutePath() + "/data.zip";
 		DownloadFile downloadFile = new DownloadFile(output);
 		downloadFile.execute("http://m13.fvenancio.com/catalog/data.zip");
 	}
@@ -181,7 +182,20 @@ public class SplashScreenActivity extends Activity {
 		protected void onPostExecute(String unused) {
 			mProgressDialog.dismiss();
 			Intent i = new Intent(getApplicationContext(), MainActivity.class);
+			ResourceReader rr = MyCatalogApp.getInstance().rr;
+			rr.setInputStream(output);
 			
+			File unzipDir = new File(rr.getUnzipLocation());
+			deleteRecursive(unzipDir);
+			startActivity(i);
+			finish();
+		}
+		
+		void deleteRecursive(File fileOrDirectory) {
+		    if (fileOrDirectory.isDirectory())
+		        for (File child : fileOrDirectory.listFiles())
+		            deleteRecursive(child);
+		    fileOrDirectory.delete();
 		}
 	}
 

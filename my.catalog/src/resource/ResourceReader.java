@@ -3,6 +3,7 @@ package resource;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringReader;
@@ -28,28 +29,28 @@ public class ResourceReader {
 
 	public String xml;
 	public Catalog catalog;
+	public InputStream is;
 
 	public ResourceReader(Context context) {
 		_context = context;
 		_unzipLocation = _context.getFilesDir().getAbsolutePath() + "/";
 	}
 
-	public String getPhotoPath(String img){
+	public String getPhotoPath(String img) {
 		return _unzipLocation + "img/" + img;
 	}
-	
 
 	/**
 	 * Parses the xml and generates the Catalog object.
 	 * 
 	 * @author fpinheiro
 	 */
-	public Catalog generateCatalog(){
-		if(catalog != null)
+	public Catalog generateCatalog() {
+		if (catalog != null)
 			return catalog;
-		if(xml == null)
+		if (xml == null)
 			read();
-		
+
 		XmlParser xmlParser = new XmlParser();
 		try {
 			catalog = xmlParser.parse(new StringReader(xml));
@@ -62,7 +63,7 @@ public class ResourceReader {
 		}
 		return catalog;
 	}
-	
+
 	/**
 	 * Reads the resources, load xml file.
 	 * 
@@ -96,8 +97,8 @@ public class ResourceReader {
 				return true;
 			}
 		}
-		
-		InputStream is = _context.getResources().openRawResource(R.raw.data);
+
+		InputStream is = getInputStream();
 		Unzip d = new Unzip(is, _unzipLocation);
 
 		if (d.unzip()) {
@@ -138,5 +139,24 @@ public class ResourceReader {
 		}
 		Log.i("Catalog", "Catalog xml file read with success.");
 		return retXml;
+	}
+	
+	public InputStream getInputStream() {
+		if (is == null)
+			return _context.getResources().openRawResource(R.raw.data);
+		else
+			return is;
+	}
+	
+	public void setInputStream(String path){
+		try {
+			is = new FileInputStream(path);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	};
+	
+	public String getUnzipLocation(){
+		return _unzipLocation;
 	}
 }
