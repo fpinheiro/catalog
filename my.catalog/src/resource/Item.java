@@ -7,6 +7,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.view.Display;
+import android.view.WindowManager;
 
 /**
  * Represents a catalog item, with it's
@@ -61,11 +63,35 @@ public class Item implements Parcelable {
 	};
 
 	public Bitmap getThumbPhoto(Context c){
-		return getBitMap(c, _thumb_photo);
+		Bitmap bm = getBitMap(c, _thumb_photo);
+		if (bm == null)
+			return bm;
+		
+		WindowManager wm = (WindowManager) c.getSystemService(Context.WINDOW_SERVICE);
+		Display display = wm.getDefaultDisplay();
+		
+//		float displayWidth = display.getWidth();
+		float displayHeight = display.getHeight();
+		float scalingFactor = (float) ((displayHeight * 0.10)/bm.getHeight());
+		int scaleHeight = (int) (bm.getHeight() * scalingFactor);
+		int scaleWidth = (int) (bm.getWidth() * scalingFactor);
+		return Bitmap.createScaledBitmap(bm, scaleWidth, scaleHeight, true);
 	}
 	
 	public Bitmap getMainPhoto(Context c){
-		return getBitMap(c, _photo);
+		Bitmap bm = getBitMap(c, _photo);
+		if (bm == null)
+			return bm;
+		
+		WindowManager wm = (WindowManager) c.getSystemService(Context.WINDOW_SERVICE);
+		Display display = wm.getDefaultDisplay();
+		
+//		float displayWidth = display.getWidth();
+		float displayHeight = display.getHeight();
+		float scalingFactor = (float) ((displayHeight * 0.60)/bm.getHeight());
+		int scaleHeight = (int) (bm.getHeight() * scalingFactor);
+		int scaleWidth = (int) (bm.getWidth() * scalingFactor);
+		return Bitmap.createScaledBitmap(bm, scaleWidth, scaleHeight, true);
 	}
 	
 	public Bitmap getBitMap(Context c, String path){
