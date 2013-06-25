@@ -57,9 +57,11 @@ public class ResourceReader {
 		} catch (XmlPullParserException e) {
 			Log.e("Catalog", "Could not parse xml.[1]");
 			Log.e("Catalog", e.getMessage());
+			return null;
 		} catch (IOException e) {
 			Log.e("Catalog", "Could not parse xml.[2]");
 			Log.e("Catalog", e.getMessage());
+			return null;
 		}
 		return catalog;
 	}
@@ -152,6 +154,7 @@ public class ResourceReader {
 		try {
 			is = new FileInputStream(path);
 		} catch (FileNotFoundException e) {
+			Log.e("Catalog", "InputStream change error.");
 			e.printStackTrace();
 		}
 	};

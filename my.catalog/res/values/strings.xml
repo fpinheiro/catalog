@@ -10,5 +10,6 @@
     <string name="loading">Lendo catálogo.</string>
     <string name="be_cool">Fique tranquilo que é só desta vez...</string>
     <string name="update_catalog">Atualizar catálogo</string>
+    <string name="use_old_catalog">Voltar para catálogo antigo</string>
 
 </resources>

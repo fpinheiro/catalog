@@ -16,7 +16,10 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -29,6 +32,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Gallery;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SplashScreenActivity extends Activity {
 
@@ -90,17 +94,48 @@ public class SplashScreenActivity extends Activity {
 		case R.id.update_catalog:
 			updateCatalog();
 			return true;
+		
+		case R.id.use_old_catalog:
+			useOldCatalog();
+			return true;
 		default:
 			return super.onOptionsItemSelected(item);
 		}
 	}
 
+
+	private void updateCatalog() {
+		// execute this when the downloader must be fired
+		String output = getApplicationContext().getFilesDir().getAbsolutePath() + "/data.zip";
+		DownloadFile downloadFile = new DownloadFile(output);
+		downloadFile.execute("http://m13.fvenancio.com/catalog/data.zip");
+	}
+	
+	private void useOldCatalog(){
+		Intent i = new Intent(getApplicationContext(), MainActivity.class);
+		ResourceReader rr = MyCatalogApp.getInstance().rr;
+		rr.catalog = null;
+		rr.is = null;
+
+		File unzipDir = new File(rr.getUnzipLocation());
+		deleteRecursive(unzipDir);
+		startActivity(i);
+		finish();		
+	}
+	
+	void deleteRecursive(File fileOrDirectory) {
+		if (fileOrDirectory.isDirectory())
+			for (File child : fileOrDirectory.listFiles())
+				deleteRecursive(child);
+		fileOrDirectory.delete();
+	}
+	
 	@Override
 	protected Dialog onCreateDialog(int id) {
 		switch (id) {
 		case DIALOG_DOWNLOAD_PROGRESS:
 			mProgressDialog = new ProgressDialog(this);
-			mProgressDialog.setMessage("Downloading file..");
+			mProgressDialog.setMessage("Baixando novo catálogo...");
 			mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 			mProgressDialog.setCancelable(false);
 			mProgressDialog.show();
@@ -110,29 +145,42 @@ public class SplashScreenActivity extends Activity {
 		}
 	}
 
-	private void updateCatalog() {
-		// execute this when the downloader must be fired
-		String output = getApplicationContext().getFilesDir().getAbsolutePath() + "/data.zip";
-		DownloadFile downloadFile = new DownloadFile(output);
-		downloadFile.execute("http://m13.fvenancio.com/catalog/data.zip");
-	}
-
 	public class DownloadFile extends AsyncTask<String, Integer, String> {
 
 		public String output;
+		private boolean connected = false;
 
 		public DownloadFile(String otp) {
 			output = otp;
 		}
 
+		private boolean isNetworkConnected() {
+			ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+			NetworkInfo ni = cm.getActiveNetworkInfo();
+			if (ni == null) {
+				// There are no active networks.
+				return false;
+			} else
+				return true;
+		}
+
 		@Override
 		protected void onPreExecute() {
 			super.onPreExecute();
-			showDialog(DIALOG_DOWNLOAD_PROGRESS);
+			if (isNetworkConnected()) {
+				showDialog(DIALOG_DOWNLOAD_PROGRESS);
+				connected = true;
+			} else {
+				Toast.makeText(getApplicationContext(), "Você deve estar conectado para atualizar o catálogo!",
+						Toast.LENGTH_LONG).show();
+			}
 		}
 
 		@Override
 		protected String doInBackground(String... sUrl) {
+			if (!connected) {
+				return null;
+			}
 			if (output == null) {
 				Log.w("Catalog", "Cannot download without a specified output path.");
 				return null;
@@ -157,7 +205,7 @@ public class SplashScreenActivity extends Activity {
 				while ((count = input.read(data)) != -1) {
 					total += count;
 					// publishing the progress....
-					Integer progress = (int) (total * 100 / fileLength); 
+					Integer progress = (int) (total * 100 / fileLength);
 					publishProgress(progress);
 					out.write(data, 0, count);
 				}
@@ -180,22 +228,19 @@ public class SplashScreenActivity extends Activity {
 
 		@Override
 		protected void onPostExecute(String unused) {
+			if (!connected) {
+				return;
+			}
 			mProgressDialog.dismiss();
 			Intent i = new Intent(getApplicationContext(), MainActivity.class);
 			ResourceReader rr = MyCatalogApp.getInstance().rr;
+			rr.catalog = null;
 			rr.setInputStream(output);
-			
+
 			File unzipDir = new File(rr.getUnzipLocation());
 			deleteRecursive(unzipDir);
 			startActivity(i);
 			finish();
-		}
-		
-		void deleteRecursive(File fileOrDirectory) {
-		    if (fileOrDirectory.isDirectory())
-		        for (File child : fileOrDirectory.listFiles())
-		            deleteRecursive(child);
-		    fileOrDirectory.delete();
 		}
 	}
 
