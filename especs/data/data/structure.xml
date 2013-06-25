@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+	<title>FastShop</title>
+	<category>
+		<name>Lavadora de Roupa</name>
+		<photo>maq_lavar.jpg</photo>
+		<item>
+			<name>LG Prime Touch</name>
+			<icon>LGWD1412RT_t.jpg</icon>
+			<photo>LGWD1412RT_g.jpg</photo>
+			<description>Lavadora e Secadora de Roupa 10,2Kg LG Prime Touch com 14 Programas de Lavagem, Display Touch, 6 Motion, Cor Branca - WD1412RT</description>
+		</item>
+		<item>
+			<name>Brastemp Ative BWU11AB</name>
+			<icon>BRBWU11AB_t.jpg</icon>
+			<photo>BRBWU11AB_g.jpg</photo>
+			<description>Lavadora de Roupa 11kg Brastemp Ative BWU11AB com 5 Programas de Lavagem, Sistema Smart Fast, Tecnologia Touch, Smart Container, Cor Branca</description>
+		</item>
+	</category>
+	<category>
+		<name>Refrigeradores</name>
+		<photo>refrigerador.jpg</photo>
+		<category>
+			<name>Electrolux</name>
+			<photo>elux_logo.jpg</photo>
+			<item>
+				<name>Electrolux DF42</name>
+				<icon>EXDF42_t.jpg</icon>
+				<photo>EXDF42_g.jpg</photo>
+				<description>Refrigerador 2 Portas 382L Frost Free com Controle de Temperatura Externo Blue Touch na Cor Branca- Electrolux - DF42</description>
+			</item>
+			<item>
+				<name>Blue Touch DFX49</name>
+				<icon>EXDFX49_t.jpg</icon>
+				<photo>EXDFX49_g.jpg</photo>
+				<description>Refrigerador Celebrate Blue Touch DFX49 2 Portas 402L, Frost Free, Ice Twister, Drink Express, Turbo Congelamento, Cor Inox - Electrolux</description>
+			</item>
+		</category>		
+		<category>
+			<name>Brastemp</name>
+			<photo>brastemp.jpg</photo>
+			<item>
+				<name>Brastemp BRE50NR</name>
+				<icon>BRBRE50NR_t.jpg</icon>
+				<photo>BRBRE50NR_g.jpg</photo>
+				<description>Refrigerador 2 Portas 422L Frost Free / Inverse / Smart Bar / Inox - Ative Brastemp - BRE50NR</description>
+			</item>
+		</category>
+	</category>
+</catalog>
